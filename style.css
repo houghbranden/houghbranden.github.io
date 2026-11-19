@@ -92,26 +92,36 @@ h1{
     flex-wrap: wrap;
 }
 
-.pill{
+.pill {
   font-family: var(--round);
   font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   color: var(--ink);
-  background: #fff;
   padding: 10px 20px;
   border-radius: 999px;
-  box-shadow: 0 4px 0 rgba(13, 63, 116, 0.25);
+  border: 3px solid var(--ink);
+  box-shadow: 0 5px 0 var(--ink);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
+.pill.sun     { background: var(--sun); }
+.pill.seafoam { background: #7ee8c0; }
+.pill.coral   { background: var(--coral); }
+.pill.sky     { background: #bfeaff; }
+
 .pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 rgba(13, 63, 116, 0.25);
+  transform: translateY(-3px) rotate(-2deg);
+  box-shadow: 0 8px 0 var(--ink);
 }
 
-.pill.yellow {
-  background: var(--sun);
+.pill:nth-child(even):hover {
+  transform: translateY(-3px) rotate(2deg);
+}
+
+.pill:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--ink);
 }
 
 .card{
@@ -242,4 +252,13 @@ footer {
   50%  { transform: translate(-10px, -55vh); }
   75%  { transform: translate(10px, -85vh); }
   100% { transform: translate(0, -120vh); }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 56px;
+  }
+  .card {
+    padding: 22px;
+  }
 }
