@@ -1,0 +1,44 @@
+:root{
+  --sky: #7fd6f2;
+  --sea: #2a9fd6;
+  --deep: #1565a8;
+  --abyss: #0d3f74;
+  --sun: #ffe14d;
+  --coral: #ff7a6b;
+  --sand: #f3d9a4;
+  --ink: #123552;
+
+  --round: 'Fredoka', sans-serif;
+  --body: 'Nunito', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.6;
+    min-height: 100vh;
+    background: var(--abyss);
+}
+
+.ocean{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--sea) 35%, var(--deep) 75%, var(--abyss) 100%);
+}
+
+.ocean::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background: repeating-linear-gradient(100deg, transparent 0 60px, #fff 60px 90px, transparent 90px 170px);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 60%);
+}
